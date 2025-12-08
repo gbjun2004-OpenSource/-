@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>안산시 대부동동 소개</title>
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --navy-1:#6b7aa8;
+      --navy-2:#9fb0e0;
+      --accent:#1e66ff;
+      --text:#243044;
+      --muted:#6b7280;
+      --card:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:200px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy-1), var(--navy-2));
+      color: white;
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img{height:40px}
+
+    .home-link{ position:absolute; right:20px; top:28px; background:none; color:#ffffff; padding:0; border:none; text-decoration:none; font-weight:700; font-size:0.95rem;}
+
+    h1 { margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;}
+
+    header p{margin:8px 0 0 0; color:rgba(255,255,255,0.9)}
+
+    .map-section {
+      padding: 36px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .map-section img {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(30,40,80,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    h2 { font-size: 1.7rem; margin-bottom: 18px; border-left: 6px solid var(--accent); padding-left: 12px; color: var(--text); font-weight:700;}
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(30,40,80,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(30,40,80,0.03);
+    }
+
+    .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(30,40,80,0.08)}
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+    }
+
+    .card-title{font-weight:700; font-size:1.08rem; color:var(--text); margin-bottom:6px}
+    .card-desc{font-size:0.95rem; color:var(--muted); line-height:1.45}
+
+    a.accent{color:var(--accent); text-decoration:none; font-weight:600}
+
+    h1, .home-link, h2 span { font-family:'YGIghtJalnanche', sans-serif; }
+
+@media (max-width:600px){
+      h1{font-size:1.6rem}
+      .map-section img{width:95%}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
+      <img src="ansan_logo.png" alt="안산시 로고" />
+    </div>
+    <a class="home-link" href="index.html"><span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span></a>
+    <h1><span style="font-family:'YGIghtJalnanche', sans-serif;">안산시 대부동동</span></h1>
+    <p>대부동동 서해 노을이 가장 아름다운 힐링 아일랜드</p>
+  </header>
+
+  <div class="map-section">
+    <h2>📍 대부동동 위치</h2>
+    <img src="대부동동_지도.png" alt="안산시 지도 내 대부동동 위치 표시" />
+    <p style="margin-top:10px; font-size:0.95rem; color:var(--muted)">(같은 폴더에 이미지 파일을 두면 보입니다)</p>
+  </div>
+
+  <section>
+    <h2>🏝️ <span style="font-family:'YGIghtJalnanche',sans-serif;">관광지 추천</span></h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="tour1.jpg" alt="관광지 이미지" />
+        <div class="card-title">대부도 해솔길</div>
+        <div class="card-desc">서해 노을을 보며 걷기 좋은 트래킹 코스로 가족·연인 코스로 인기.</div>
+      </div>
+      <div class="card">
+        <img src="tour2.jpg" alt="관광지 이미지" />
+        <div class="card-title">탄도항</div>
+        <div class="card-desc">바닷바람과 풍력발전기, 드라마 촬영지로 유명한 안산 대표 포토존.</div>
+      </div>
+      <div class="card">
+        <img src="tour3.jpg" alt="관광지 이미지" />
+        <div class="card-title">구봉도 낙조전망대</div>
+        <div class="card-desc">서해 낙조 명소로 불리는 곳으로 편안한 산책로와 전망대가 인상적.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🍽️ <span style="font-family:'YGIghtJalnanche',sans-serif;">맛집 추천</span></h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="food1.jpg" alt="맛집 이미지" />
+        <div class="card-title">대부도 조개구이 거리</div>
+        <div class="card-desc">신선한 조개구이와 바다 분위기를 함께 즐길 수 있는 명물.</div>
+      </div>
+      <div class="card">
+        <img src="food2.jpg" alt="맛집 이미지" />
+        <div class="card-title">칼국수 맛집 ○○</div>
+        <div class="card-desc">현지인 추천 칼국수로 국물 맛이 진하고 바지락 풍미가 가득.</div>
+      </div>
+      <div class="card">
+        <img src="food3.jpg" alt="맛집 이미지" />
+        <div class="card-title">해산물 백반집 △△</div>
+        <div class="card-desc">싱싱한 해산물 반찬과 푸짐한 백반으로 여행객 만족도 높은 곳.</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
