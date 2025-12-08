@@ -80,6 +80,8 @@
       box-shadow: 0 6px 18px rgba(30,40,80,0.06);
       transition: transform .18s ease, box-shadow .18s ease;
       border: 1px solid rgba(30,40,80,0.03);
+      text-decoration:none;
+      color:inherit;
     }
 
     .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(30,40,80,0.08)}
@@ -100,7 +102,7 @@
 
     h1, .home-link, h2 span { font-family:'YGIghtJalnanche', sans-serif; }
 
-@media (max-width:600px){
+    @media (max-width:600px){
       h1{font-size:1.6rem}
       .map-section img{width:95%}
     }
@@ -146,22 +148,31 @@
   <section>
     <h2>🍽️ <span style="font-family:'YGIghtJalnanche',sans-serif;">맛집 추천</span></h2>
     <div class="card-grid">
-      <div class="card">
-        <img src="donghwan_clam.jpg" alt="동환네 조개구이 이미지" />
-        <div class="card-title">동환네 조개구이</div>
-        <div class="card-desc">신선한 조개구이와 바다 분위기를 함께 즐길 수 있는 명물.</div>
-      </div>
-      <div class="card">
-        <img src="sonamu_original.jpg" alt="진짜원조소나무집 이미지" />
-        <div class="card-title">진짜원조소나무집</div>
-        <div class="card-desc">현지인 추천 칼국수로 국물 맛이 진하고 바지락 풍미가 가득.</div>
-      </div>
-      <div class="card">
-        <img src="seorae_garden.jpg" alt="서래가든 이미지" />
-        <div class="card-title">서래가든</div>
-        <div class="card-desc">싱싱한 해산물 반찬과 푸짐한 백반으로 여행객 만족도 높은 곳.</div>
-      </div>
+      <a href="food1.html">
+        <div class="card">
+          <img src="donghwan_clam.jpg" alt="동환네 조개구이 이미지" />
+          <div class="card-title">동환네 조개구이</div>
+          <div class="card-desc">신선한 조개구이와 바다 분위기를 함께 즐길 수 있는 명물.</div>
+        </div>
+      </a>
+
+      <a href="sonamu.html">
+        <div class="card">
+          <img src="sonamu_original.jpg" alt="진짜원조소나무집 이미지" />
+          <div class="card-title">진짜원조소나무집</div>
+          <div class="card-desc">현지인 추천 칼국수로 국물 맛이 진하고 바지락 풍미가 가득.</div>
+        </div>
+      </a>
+
+      <a href="seorae.html">
+        <div class="card">
+          <img src="seorae_garden.jpg" alt="서래가든 이미지" />
+          <div class="card-title">서래가든</div>
+          <div class="card-desc">싱싱한 해산물 반찬과 푸짐한 백반으로 여행객 만족도 높은 곳.</div>
+        </div>
+      </a>
     </div>
   </section>
 </body>
 </html>
+
