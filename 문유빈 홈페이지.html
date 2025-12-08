@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>안산 Ansan</title>
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --navy-1:#6b7aa8;
+      --navy-2:#9fb0e0;
+      --accent:#1e66ff;
+      --text:#243044;
+      --muted:#6b7280;
+      --card:#ffffff;
+    }
+
+    *{box-sizing:border-box}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:200px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy-1), var(--navy-2));
+      color: white;
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img{height:40px}
+
+    h1 { margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;}
+    header p{margin:8px 0 0 0; color:rgba(255,255,255,0.9)}
+
+    .weather-box{
+      position:absolute;
+      right:20px;
+      top:28px;
+      background:rgba(255,255,255,0.9);
+      padding:6px 12px;
+      border-radius:12px;
+      color:var(--text);
+      font-weight:600;
+      font-size:0.9rem;
+      text-align:center;
+      line-height:1.3;
+    }
+
+    .hero {
+      background-image: url('images/ansan_main.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px; /* 높이 조금 줄임 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-align:center;
+    }
+
+    .hero-content {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      background: rgba(0,0,0,0.2);
+      padding: 16px;
+      border-radius: 12px;
+    }
+
+    .hero-content .hero-text {
+      font-size:2.2rem; /* 글씨 조금 줄임 */
+      font-weight:bold;
+      color:white;
+      text-shadow:2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero-content img {
+      width:140px; /* 지도 줄임 */
+      height:auto;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    h2 { font-size: 1.7rem; margin-bottom: 18px; border-left: 6px solid var(--accent); padding-left: 12px; color: var(--text); font-weight:700;}
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(30,40,80,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(30,40,80,0.03);
+    }
+
+    .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(30,40,80,0.08)}
+    .card img{
+      width:100%;
+      height:200px; /* 카드 이미지 높이 증가 */
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+    }
+    .card-title{font-weight:700; font-size:1.08rem; color:var(--text); margin-bottom:6px}
+    .card-desc{font-size:0.95rem; color:var(--muted); line-height:1.45}
+
+    a.accent{color:var(--accent); text-decoration:none; font-weight:600}
+    h1, .home-link, h2 span { font-family:'YGIghtJalnanche', sans-serif; }
+
+    footer {
+      background: linear-gradient(135deg, var(--navy-1), var(--navy-2));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width:600px){
+      h1{font-size:1.6rem}
+      .hero-content .hero-text{font-size:1.8rem}
+      .hero-content img{width:120px}
+      .card-grid{grid-template-columns:1fr}
+      .card img{height:180px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
+      <img src="ansan_logo.png" alt="안산시 로고" />
+    </div>
+
+    <div class="weather-box">
+      ☀ 12°C / 맑음<br>안산시 날씨
+    </div>
+
+    <h1><span style="font-family:'YGIghtJalnanche',sans-serif;">안산 Ansan</span></h1>
+    <p>자연과 문화가 어우러진 힐링 도시</p>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">안산시를 만나보세요</div>
+      <img src="images/ansan_map_small.png" alt="안산시 위치 지도" />
+    </div>
+  </section>
+
+  <section>
+    <h2>🏘️ <span style="font-family:'YGIghtJalnanche',sans-serif;">안산시 행정구역</span></h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="images/daebudongdong.jpg" alt="대부동동 이미지" />
+        <div class="card-title">대부동동</div>
+        <div class="card-desc">대부동동의 관광지와 맛집 정보를 확인하세요.</div>
+      </div>
+      <div class="card">
+        <img src="images/seonbudong.jpg" alt="선부동 이미지" />
+        <div class="card-title">선부동</div>
+        <div class="card-desc">선부동의 명소와 지역 정보를 제공합니다.</div>
+      </div>
+      <div class="card">
+        <img src="images/wadong.jpg" alt="와동 이미지" />
+        <div class="card-title">와동</div>
+        <div class="card-desc">와동의 다양한 관광지와 체험 정보를 만나보세요.</div>
+      </div>
+      <div class="card">
+        <img src="images/chojidong.jpg" alt="초지동 이미지" />
+        <div class="card-title">초지동</div>
+        <div class="card-desc">초지동의 볼거리와 맛집을 확인할 수 있습니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Ansan City. All rights reserved.
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>안산시 고잔동 소개</title>
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --navy-1: #6b7aa8;
+      --navy-2: #9fb0e0;
+      --accent: #1e66ff;
+      --text: #243044;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding-bottom: 200px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy-1), var(--navy-2));
+      color: white;
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img { height: 40px }
+
+    .home-link {
+      position: absolute;
+      right: 20px;
+      top: 28px;
+      background: none;
+      color: #ffffff;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    header p {
+      margin: 8px 0 0 0;
+      color: rgba(255, 255, 255, 0.9)
+    }
+
+    .map-section {
+      padding: 36px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .map-section img {
+      width: 80%;
+      max-width: 700px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(30, 40, 80, 0.06);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      border-left: 6px solid var(--accent);
+      padding-left: 12px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(30, 40, 80, 0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(30, 40, 80, 0.03);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 34px rgba(30, 40, 80, 0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.01));
+    }
+
+    .card-title {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    a.accent {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    h1, .home-link, h2 span {
+      font-family: 'YGIghtJalnanche', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem }
+      .map-section img { width: 95% }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
+      <img src="data:image/png;base64,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" alt="안산시 로고" />
+    </div>
+    <a class="home-link" href="index.html"><span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span></a>
+    <h1><span style="font-family:'YGIghtJalnanche', sans-serif;">안산시 고잔동</span></h1>
+    <p>상업과 주거가 어우러진 단원구의 중심 지역</p>
+  </header>
+
+  <div class="map-section">
+    <h2>📍 고잔동 위치</h2>
+    <img src="https://cdn.imweb.me/upload/S202108128fd3484894749/17c47a862100c.jpg" alt="안산시 지도 내 고잔동 위치 표시" />
+    <p style="margin-top:10px; font-size:0.95rem; color:var(--muted)"></p>
+  </div>
+
+  <section>
+    <h2>🏙️ <span style="font-family:'YGIghtJalnanche',sans-serif;">주요 장소</span></h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://mblogthumb-phinf.pstatic.net/MjAxODA1MDhfMTM4/MDAxNTI1NzgwMTM2NTQ2.CVb9kGWzI0unF724vxuG0A0Qso_-7JTwKcF3r4-Wgeog.YGCm7LgsB5vWgEYMlnFVOs3pbbCPiil1cIqhQgR7nV8g.JPEG.ysw3077/DSC_0047.jpg?type=w420" alt="고잔중앙공원" />
+        <div class="card-title">고잔중앙공원</div>
+        <div class="card-desc">넓은 잔디밭과 산책로가 있는 도심 속 힐링 공간.</div>
+      </div>
+      <div class="card">
+        <img src="https://ojsfile.ohmynews.com/down/images/1/hby_213495_1[286760].jpg" alt="문화예술의전당" />
+        <div class="card-title">안산문화예술의전당</div>
+        <div class="card-desc">공연, 전시, 문화체험이 가능한 복합 예술 공간.</div>
+      </div>
+      <div class="card">
+        <img src="https://lh4.googleusercontent.com/proxy/X9_GaGUMRc1fzIukzMBrusP_K2f8-x_DCiPgDm-0zQLTzyb_W9TEzorvbwzNboYC6fwYJ3VogvpCViZSs99jfATCe-hF70ZnRhclAwLR" alt="단원도서관" />
+        <div class="card-title">단원도서관</div>
+        <div class="card-desc">다양한 책과 학습공간이 마련된 고잔동의 대표 도서관.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🍜 <span style="font-family:'YGIghtJalnanche',sans-serif;">맛집 추천</span></h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://d12zq4w4guyljn.cloudfront.net/750_750_20240605035752124_photo_eaf0ecd4b2da.webp" alt="청년다방" />
+        <div class="card-title">청년다방</div>
+        <div class="card-desc">눈꽃치즈 떡볶이로 유명한 감성 분식 맛집.</div>
+      </div>
+      <div class="card">
+        <img src="https://www.newploy.net/wp-content/uploads/2024/07/%EA%B3%A0%EB%B0%98%EC%8B%9D%EB%8B%B9_%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B3%A0%EA%B8%B0-1024x683.jpg" alt="고반식당" />
+        <div class="card-title">고반식당</div>
+        <div class="card-desc">숯불향 가득한 고기구이와 점심 특선으로 인기.</div>
+      </div>
+      <div class="card">
+        <img src="https://mblogthumb-phinf.pstatic.net/MjAyMzAzMTVfMjk5/MDAxNjc4ODQ0MDg4Njg4.2yLvaHTfeq1EtmafDYjAE_ADmzE70L0_iO56GtqP2vIg.HYfHCAAt1V3fKUIFiPPOyJojxOpwKweWDYIGST9zlYsg.JPEG.zoasoju/SE-4392149d-2182-4db6-8121-183686d7927a.jpg?type=w800" alt="육회한연어" />
+        <div class="card-title">육회한연어</div>
+        <div class="card-desc">육회와 연어회 덮밥이 유명한 캐주얼한 맛집.</div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
