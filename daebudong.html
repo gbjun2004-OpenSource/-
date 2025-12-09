@@ -15,6 +15,8 @@
       --text:#243044;
       --muted:#6b7280;
       --card:#ffffff;
+      --arrow-bg: rgba(200,200,200,0.22);
+      --arrow-color: #9aa3ad;
     }
 
     *{box-sizing:border-box}
@@ -43,6 +45,8 @@
     h1 { margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;}
 
     header p{margin:8px 0 0 0; color:rgba(255,255,255,0.9)}
+
+    a{ text-decoration:none; color:inherit; }
 
     .map-section {
       padding: 36px 20px;
@@ -82,6 +86,7 @@
       border: 1px solid rgba(30,40,80,0.03);
       text-decoration:none;
       color:inherit;
+      cursor: pointer;
     }
 
     .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(30,40,80,0.08)}
@@ -100,11 +105,73 @@
 
     a.accent{color:var(--accent); text-decoration:none; font-weight:600}
 
-    h1, .home-link, h2 span { font-family:'YGIghtJalnanche', sans-serif; }
+    h1, .home-link, h2 span { font-family:'YGIghtJalnanche',sans-serif; }
+
+    .popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      background:rgba(0,0,0,0.55);
+      z-index:9999;
+      padding:24px;
+    }
+
+    .popup-content{
+      width:75%;
+      max-width:900px;
+      background:#fff;
+      border-radius:18px;
+      padding:40px 80px; 
+      position:relative;
+      box-shadow:0 18px 50px rgba(0,0,0,0.25);
+      text-align:left;
+      overflow:hidden;
+    }
+
+    .popup img{ width:100%; max-height:480px; object-fit:cover; border-radius:12px; display:block; }
+    .popup-title{ font-size:1.6rem; font-weight:800; margin-top:14px; }
+    .popup-desc{ margin-top:10px; color:var(--muted); line-height:1.5; }
+    .popup-link{ display:inline-block; margin-top:16px; padding:10px 16px; background:var(--accent); color:#fff; border-radius:10px; text-decoration:none; font-weight:700; }
+    .popup-close{ position:absolute; top:16px; right:18px; font-size:1.6rem; cursor:pointer; color:#333; }
+
+    .popup-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:54px;
+      height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:none;
+      background:var(--arrow-bg);
+      color:var(--arrow-color);
+      font-size:26px;
+      cursor:pointer;
+      opacity:0; 
+      transition:opacity .18s ease, transform .12s ease;
+      pointer-events:auto;
+    }
+
+    .popup-content:hover .popup-arrow{ opacity:1; }
+
+    .popup-arrow.left{ left:18px; }
+    .popup-arrow.right{ right:18px; }
+
+    .popup-arrow:hover{ transform:translateY(-50%) scale(1.05); }
+
+    @media (max-width:800px){
+      .popup-content{ width:95%; padding:18px; }
+      .popup-arrow{ width:44px; height:44px; font-size:22px; }
+    }
 
     @media (max-width:600px){
       h1{font-size:1.6rem}
       .map-section img{width:95%}
+      .popup img{ max-height:300px }
     }
   </style>
 </head>
@@ -127,17 +194,17 @@
   <section>
     <h2>🏝️ <span style="font-family:'YGIghtJalnanche',sans-serif;">관광지 추천</span></h2>
     <div class="card-grid">
-      <div class="card">
+      <div class="card" data-link="#">
         <img src="tour1.jpg" alt="관광지 이미지" />
         <div class="card-title">대부도 해솔길</div>
         <div class="card-desc">서해 노을을 보며 걷기 좋은 트래킹 코스로 가족·연인 코스로 인기.</div>
       </div>
-      <div class="card">
+      <div class="card" data-link="#">
         <img src="tour2.jpg" alt="관광지 이미지" />
         <div class="card-title">탄도항</div>
         <div class="card-desc">바닷바람과 풍력발전기, 드라마 촬영지로 유명한 안산 대표 포토존.</div>
       </div>
-      <div class="card">
+      <div class="card" data-link="#">
         <img src="tour3.jpg" alt="관광지 이미지" />
         <div class="card-title">구봉도 낙조전망대</div>
         <div class="card-desc">서해 낙조 명소로 불리는 곳으로 편안한 산책로와 전망대가 인상적.</div>
@@ -173,6 +240,92 @@
       </a>
     </div>
   </section>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="popup-close" id="popupClose">&times;</span>
+      <button class="popup-arrow left" id="popupPrev">&#10094;</button>
+      <button class="popup-arrow right" id="popupNext">&#10095;</button>
+
+      <img id="popupImg" src="" alt="popup image" />
+      <div class="popup-title" id="popupTitle"></div>
+      <div class="popup-desc" id="popupDesc"></div>
+      <a id="popupLink" class="popup-link" href="#" target="_blank">자세히 보기</a>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popupImg');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupDesc = document.getElementById('popupDesc');
+    const popupLink = document.getElementById('popupLink');
+    const popupClose = document.getElementById('popupClose');
+    const popupPrev = document.getElementById('popupPrev');
+    const popupNext = document.getElementById('popupNext');
+
+    let currentIndex = 0;
+
+    const cardData = Array.from(cards).map(card => {
+      const linkEl = card.closest('a');
+      return {
+        img: card.querySelector('img').src,
+        title: card.querySelector('.card-title').innerText,
+        desc: card.querySelector('.card-desc').innerText,
+        link: linkEl ? linkEl.href : card.dataset.link || '#'
+      };
+    });
+
+    function openPopup(index){
+      currentIndex = index;
+      const d = cardData[index];
+      popupImg.src = d.img;
+      popupTitle.textContent = d.title;
+      popupDesc.textContent = d.desc;
+      popupLink.href = d.link;
+      popup.style.display = 'flex';
+    }
+
+    function closePopup(){ popup.style.display = 'none'; }
+    function showPrev(){ currentIndex = (currentIndex - 1 + cardData.length) % cardData.length; openPopup(currentIndex); }
+    function showNext(){ currentIndex = (currentIndex + 1) % cardData.length; openPopup(currentIndex); }
+
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openPopup(idx);
+      });
+    });
+
+    popupClose.addEventListener('click', closePopup);
+    popupPrev.addEventListener('click', showPrev);
+    popupNext.addEventListener('click', showNext);
+
+    document.addEventListener('keydown', (e)=>{
+      if(popup.style.display === 'flex'){
+        if(e.key === 'ArrowLeft') showPrev();
+        if(e.key === 'ArrowRight') showNext();
+        if(e.key === 'Escape') closePopup();
+      }
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipe = 40; 
+
+    popup.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+    popup.addEventListener('touchend', (e)=>{
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if(Math.abs(diff) > minSwipe){
+        if(diff > 0) showPrev(); else showNext();
+      }
+    }, {passive:true});
+
+    popup.addEventListener('click', (e)=>{ if(e.target === popup) closePopup(); });
+  </script>
 </body>
 </html>
+
 
