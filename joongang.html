@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>안산시 중앙동 소개</title>
+  <style>
+    :root{
+      --bg:#f6f8fc;
+      --purple-1:#8c4898;
+      --purple-2:#d2b2dd;
+      --accent:#700092;
+      --text:#243044;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --arrow-bg: rgba(200,200,200,0.22);
+      --arrow-color: #9aa3ad;
+    }
+
+    *{box-sizing:border-box}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding-bottom:200px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--purple-1), var(--purple-2));
+      color: white;
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img{height:40px}
+
+    .home-link{ position:absolute; right:20px; top:28px; background:none; color:#ffffff; padding:0; border:none; text-decoration:none; font-weight:700; font-size:0.95rem;}
+
+    h1 { margin: 0; font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em;}
+
+    header p{margin:8px 0 0 0; color:rgba(255,255,255,0.9)}
+
+    a{ text-decoration:none; color:inherit; }
+
+    .map-section {
+      padding: 36px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .map-section img {
+      width: 90%;
+      max-width: 700px;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(30,40,80,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(255,255,255,0.2));
+    }
+
+    section {
+      max-width: 1100px;
+      margin: 36px auto;
+      padding: 0 20px;
+    }
+
+    h2 { font-size: 1.7rem; margin-bottom: 18px; border-left: 6px solid var(--accent); padding-left: 12px; color: var(--text); font-weight:700;}
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(30,40,80,0.06);
+      transition: transform .18s ease, box-shadow .18s ease;
+      border: 1px solid rgba(30,40,80,0.03);
+      text-decoration:none;
+      color:inherit;
+      cursor: pointer;
+    }
+
+    .card:hover{transform:translateY(-6px); box-shadow:0 16px 34px rgba(30,40,80,0.08)}
+
+    .card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-bottom:12px;
+      background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+    }
+
+    .card-title{font-weight:700; font-size:1.08rem; color:var(--text); margin-bottom:6px}
+    .card-desc{font-size:0.95rem; color:var(--muted); line-height:1.45}
+
+    a.accent{color:var(--accent); text-decoration:none; font-weight:600}
+
+    h1, .home-link, h2 span { font-family:'YGIghtJalnanche',sans-serif; }
+
+    .popup{
+      position:fixed;
+      inset:0;
+      display:none;
+      justify-content:center;
+      align-items:center;
+      background:rgba(0,0,0,0.55);
+      z-index:9999;
+      padding:24px;
+    }
+
+    .popup-content{
+      width:75%;
+      max-width:900px;
+      background:#fff;
+      border-radius:18px;
+      padding:40px 80px; 
+      position:relative;
+      box-shadow:0 18px 50px rgba(0,0,0,0.25);
+      text-align:left;
+      overflow:hidden;
+    }
+
+    .popup img{ width:100%; max-height:480px; object-fit:cover; border-radius:12px; display:block; }
+    .popup-title{ font-size:1.6rem; font-weight:800; margin-top:14px; }
+    .popup-desc{ margin-top:10px; color:var(--muted); line-height:1.5; }
+    .popup-link{ display:inline-block; margin-top:16px; padding:10px 16px; background:var(--accent); color:#fff; border-radius:10px; text-decoration:none; font-weight:700; }
+    .popup-close{ position:absolute; top:16px; right:18px; font-size:1.6rem; cursor:pointer; color:#333; }
+
+    .popup-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:54px;
+      height:54px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      border:none;
+      background:var(--arrow-bg);
+      color:var(--arrow-color);
+      font-size:26px;
+      cursor:pointer;
+      opacity:0; 
+      transition:opacity .18s ease, transform .12s ease;
+      pointer-events:auto;
+    }
+
+    .popup-content:hover .popup-arrow{ opacity:1; }
+
+    .popup-arrow.left{ left:18px; }
+    .popup-arrow.right{ right:18px; }
+
+    .popup-arrow:hover{ transform:translateY(-50%) scale(1.05); }
+
+    @media (max-width:800px){
+      .popup-content{ width:95%; padding:18px; }
+      .popup-arrow{ width:44px; height:44px; font-size:22px; }
+    }
+
+    @media (max-width:600px){
+      h1{font-size:1.6rem}
+      .map-section img{width:95%}
+      .popup img{ max-height:300px }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
+      <img src="images/ansan_logo.jpeg" alt="안산시 로고" />
+    </div>
+    <a class="home-link" href="index.html"><span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span></a>
+    <h1><span style="font-family:'YGIghtJalnanche', sans-serif;">안산시 중앙동</span></h1>
+    <p>중앙동, 안산 정중앙에 위치한 안산의 심장</p>
+  </header>
+
+  <div class="map-section">
+    <h2>📍 중앙동 위치</h2>
+    <img src="images/중앙동_지도.png" alt="안산시 지도 내 중앙동 위치 표시" />
+    <p style="margin-top:10px; font-size:0.95rem; color:var(--muted)">(출처 : 네이버 지도)</p>
+  </div>
+
+  <section>
+    <h2>🏝️ <span style="font-family:'YGIghtJalnanche',sans-serif;">관광지 추천</span></h2>
+    <div class="card-grid">
+      <a href="place1.html">
+        <div class="card" data-link="#">
+          <img src="images/tour1.png" alt="경기도미술관" />
+          <div class="card-title">경기도미술관</div>
+          <div class="card-desc">삭막한 빌딩 숲속에서 벗어나 만끽하는 예술의 여유</div>
+        </div>
+      </a>
+
+      <a href="place2.html">
+        <div class="card">
+          <img src="images/tour2.png" alt="도파민방탈출" />
+          <div class="card-title">도파민방탈출</div>
+          <div class="card-desc">흘러가는 시간 속에서 느끼는 짜릿한 도파민</div>
+        </div>
+      </a>
+
+      <a href="place3.html">
+        <div class="card">
+          <img src="images/tour3.png" alt="펌프아케이드 안산점" />
+          <div class="card-title">펌프아케이드 안산점</div>
+          <div class="card-desc">평생 경혐해 보지 못했을 이색 놀거리</div>
+        </div>
+      </a>
+  </div>
+
+
+  <section>
+    <h2>🍽️ <span style="font-family:'YGIghtJalnanche',sans-serif;">맛집 추천</span></h2>
+    <div class="card-grid">
+      <a href="food1.html">
+        <div class="card">
+          <img src="images/food1.png" alt="헤비스테이크" />
+          <div class="card-title">헤비스테이크 안산중앙점</div>
+          <div class="card-desc">기분이 저기압일 땐 고기앞으로</div>
+        </div>
+      </a>
+
+      <a href="food2.html">
+        <div class="card">
+          <img src="images/food2.png" alt="스시일기" />
+          <div class="card-title">스시일기</div>
+          <div class="card-desc">저렴한 가격으로 즐기는 고퀄리티 초밥</div>
+        </div>
+      </a>
+
+      <a href="food3.html">
+        <div class="card">
+          <img src="images/food3.png" alt="귀큰여우" />
+          <div class="card-title">귀큰여우</div>
+          <div class="card-desc">풍성한 디저트가 만드는 레트로 감성</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="popup-close" id="popupClose">&times;</span>
+      <button class="popup-arrow left" id="popupPrev">&#10094;</button>
+      <button class="popup-arrow right" id="popupNext">&#10095;</button>
+
+      <img id="popupImg" src="" alt="popup image" />
+      <div class="popup-title" id="popupTitle"></div>
+      <div class="popup-desc" id="popupDesc"></div>
+      <div class="popup-info" id="popupInfo"
+     style="margin-top:16px; padding:14px; background:#f7f9fc; border-radius:10px; line-height:1.55; color:#333;">
+</div>
+
+      <a id="popupLink" class="popup-link" href="#" target="_blank">자세히 보기</a>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popupImg');
+    const popupTitle = document.getElementById('popupTitle');
+    const popupDesc = document.getElementById('popupDesc');
+    const popupLink = document.getElementById('popupLink');
+    const popupClose = document.getElementById('popupClose');
+    const popupPrev = document.getElementById('popupPrev');
+    const popupNext = document.getElementById('popupNext');
+
+    let currentIndex = 0;
+
+    const cardData = Array.from(cards).map((card, index) => {
+  const linkEl = card.closest('a');
+
+  const detailData = [
+    // 관광지
+    { address:"경기 안산시 단원구 동산로 268", time:"10:00 AM ~ 6:00 PM (월요일 정기휴무)", info:"☎ 031-481-7000" },
+    { address:"경기 안산시 단원구 고잔로 108", time:"1:30 PM ~ 10:00 PM (주말은 10시 30분까지)", info:"☎ 0507-1385-8316" },
+    { address:"경기 안산시 단원구 고잔1길 37", time:"12:00 PM ~ 10:00 PM (주말은 11시까지)", info:"☎ 0507-1470-8190" },
+
+    // 맛집
+    { address:"경기 안산시 단원구 예술대학로", time:"10:00 AM ~ 10:00 PM (라스트오더 9:30 PM)", info:"☎ 0507-1433-3903" },
+    { address:"경기 안산시 단원구 고잔1길 69", time:"11:00 AM ~ 9:30 PM (라스트오더 9:00 PM)", info:"☎ 0507-1463-2486" },
+    { address:"경기 안산시 단원구 중앙대로 907", time:"12:00 PM ~ 10:30 PM", info:"☎ 031-480-2040" }
+  ];
+
+  return {
+    img: card.querySelector('img').src,
+    title: card.querySelector('.card-title').innerText,
+    desc: card.querySelector('.card-desc').innerText,
+    link: linkEl ? linkEl.href : card.dataset.link || '#',
+    address: detailData[index].address,
+    time: detailData[index].time,
+    info: detailData[index].info
+  };
+});
+
+
+    const popupInfo = document.getElementById('popupInfo');
+
+function openPopup(index){
+  currentIndex = index;
+  const d = cardData[index];
+
+  popupImg.src = d.img;
+  popupTitle.textContent = d.title;
+  popupDesc.textContent = d.desc;
+
+  popupInfo.innerHTML = `
+    <b>📍 주소</b><br>${d.address}<br><br>
+    <b>⏰ 운영시간</b><br>${d.time}<br><br>
+    ${d.info ? `<b>ℹ️ 추가 정보</b><br>${d.info}` : ""}
+  `;
+
+  popupLink.href = d.link;
+  popup.style.display = 'flex';
+}
+
+
+    function closePopup(){ popup.style.display = 'none'; }
+    function showPrev(){ currentIndex = (currentIndex - 1 + cardData.length) % cardData.length; openPopup(currentIndex); }
+    function showNext(){ currentIndex = (currentIndex + 1) % cardData.length; openPopup(currentIndex); }
+
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', (e)=>{
+        e.preventDefault();
+        openPopup(idx);
+      });
+    });
+
+    popupClose.addEventListener('click', closePopup);
+    popupPrev.addEventListener('click', showPrev);
+    popupNext.addEventListener('click', showNext);
+
+    document.addEventListener('keydown', (e)=>{
+      if(popup.style.display === 'flex'){
+        if(e.key === 'ArrowLeft') showPrev();
+        if(e.key === 'ArrowRight') showNext();
+        if(e.key === 'Escape') closePopup();
+      }
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipe = 40; 
+
+    popup.addEventListener('touchstart', (e)=>{ touchStartX = e.changedTouches[0].screenX; }, {passive:true});
+    popup.addEventListener('touchend', (e)=>{
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if(Math.abs(diff) > minSwipe){
+        if(diff > 0) showPrev(); else showNext();
+      }
+    }, {passive:true});
+
+    popup.addEventListener('click', (e)=>{ if(e.target === popup) closePopup(); });
+  </script>
+</body>
+</html>
+
+
