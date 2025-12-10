@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>안산시 사동 소개</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f8fc;
+      --navy-1: #6b7aa8;
+      --navy-2: #9fb0e0;
+      --accent: #1e66ff;
+      --text: #243044;
+      --muted: #6b7280;
+      --card: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans KR', system-ui, -apple-system, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: var(--text);
+      padding-bottom: 160px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--navy-1), var(--navy-2));
+      color: #ffffff;
+      padding: 44px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header img { height: 40px; }
+
+    .home-link {
+      position: absolute;
+      right: 20px;
+      top: 26px;
+      background: none;
+      color: #ffffff;
+      border: none;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-family: 'GmarketSans', 'Noto Sans KR', sans-serif;
+    }
+
+    header p {
+      margin: 8px 0 0 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 0.98rem;
+    }
+
+    .map-section {
+      padding: 36px 20px 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .map-section h2 {
+      font-size: 1.7rem;
+      margin-bottom: 18px;
+      border-left: 6px solid var(--accent);
+      padding-left: 12px;
+      color: var(--text);
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .map-box {
+      width: 80%;
+      max-width: 700px;
+      height: 180px;
+      margin: 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(30,40,80,0.06);
+      background: repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.8),
+        rgba(255,255,255,0.8) 12px,
+        rgba(225,232,246,0.95) 12px,
+        rgba(225,232,246,0.95) 24px
+      );
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .map-section p.desc {
+      margin-top:10px;
+      font-size:0.95rem;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    section {
+      max-width:1100px;
+      margin:32px auto 0;
+      padding:0 20px;
+    }
+
+    section h2 {
+      font-size:1.7rem;
+      margin-bottom:18px;
+      border-left:6px solid var(--accent);
+      padding-left:12px;
+      color:var(--text);
+      font-weight:700;
+    }
+
+    section h2 span {
+      font-family:'GmarketSans','Noto Sans KR',sans-serif;
+    }
+
+    .card-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;
+    }
+
+    .card {
+      background:var(--card);
+      border-radius:16px;
+      padding:14px 14px 18px;
+      box-shadow:0 6px 18px rgba(30,40,80,0.06);
+      border:1px solid rgba(30,40,80,0.03);
+      cursor:pointer;
+      transition:transform .18s ease, box-shadow .18s ease;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 16px 34px rgba(30,40,80,0.08);
+    }
+
+    .card-img {
+      width:100%;
+      height:160px;
+      border-radius:12px;
+      object-fit:cover;
+      margin-bottom:10px;
+      background:#e5e7eb;
+    }
+
+    .card-title {
+      font-weight:700;
+      font-size:1.06rem;
+      margin-bottom:4px;
+      color:var(--text);
+    }
+
+    .card-desc {
+      font-size:0.94rem;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
+    footer {
+      max-width:1100px;
+      margin:40px auto 0;
+      padding:0 20px;
+      font-size:0.85rem;
+      color:var(--muted);
+      text-align:right;
+    }
+
+    /* ===== 모달 ===== */
+    .modal-overlay {
+      position:fixed;
+      inset:0;
+      background:rgba(15,23,42,0.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:50;
+    }
+    .modal-hidden { display:none; }
+
+    .modal {
+      width:min(560px,90%);
+      background:#ffffff;
+      border-radius:24px;
+      box-shadow:0 22px 60px rgba(15,23,42,0.25);
+      padding:28px 28px 24px;
+      position:relative;
+      text-align:center;
+    }
+
+    .modal-close {
+      position:absolute;
+      top:14px;
+      right:16px;
+      border:none;
+      background:none;
+      font-size:20px;
+      cursor:pointer;
+      color:#9ca3af;
+    }
+
+    .modal-img {
+      width:100%;
+      height:180px;
+      border-radius:16px;
+      object-fit:cover;
+      margin-bottom:16px;
+      background:#e5e7eb;
+    }
+
+    .modal-title {
+      font-size:1.4rem;
+      font-weight:800;
+      margin:8px 0 6px;
+      color:var(--text);
+    }
+
+    .modal-address {
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-bottom:10px;
+    }
+
+    .modal-text {
+      font-size:0.96rem;
+      color:var(--text);
+      line-height:1.6;
+      margin-bottom:20px;
+    }
+
+    .modal-button {
+      display:inline-block;
+      padding:10px 22px;
+      border-radius:999px;
+      background:var(--accent);
+      color:#ffffff;
+      text-decoration:none;
+      font-size:0.95rem;
+      font-weight:700;
+    }
+
+    @media (max-width:600px) {
+      h1 { font-size:1.7rem; }
+      .map-box { width:95%; height:160px; }
+      section { margin-top:26px; }
+      .card-img { height:140px; }
+      .modal { padding:24px 18px 20px; }
+      .modal-img { height:160px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
+      <img src="ansan_logo.png" alt="안산시 로고" />
+    </div>
+    <a class="home-link" href="index.html">홈으로</a>
+    <h1>안산시 사동</h1>
+    <p>아파트 단지와 공원, 교육 시설이 모여 있는 단원구의 대표 주거 지역</p>
+  </header>
+
+  <div class="map-section">
+    <h2>📍 사동 위치</h2>
+    <div class="map-box">
+      사동 위치 지도를 이 영역에 이미지로 넣을 수 있습니다
+    </div>
+    <p class="desc">
+      사동은 안산시 단원구 동부에 위치한 주거 밀집 지역으로, 인근 한양대학교 ERICA 캠퍼스와
+      호수공원, 안산식물원 등 여가 시설과도 가까워 학생과 직장인이 함께 생활하는 동네입니다.
+    </p>
+  </div>
+
+  <!-- 관광지 추천 -->
+  <section>
+    <h2>🏞️ <span>관광지 추천</span></h2>
+    <div class="card-grid">
+      <!-- 1. 한양대 ERICA -->
+      <div class="card" id="card-erica">
+        <img class="card-img" src="images/erica.jpg" alt="한양대학교 ERICA 캠퍼스 이미지" />
+        <div class="card-title">한양대학교 ERICA 캠퍼스</div>
+        <div class="card-desc">
+          사동과 가장 가까운 종합 캠퍼스로, 잔디광장과 호수공원, 산책로가 잘 조성되어 있습니다.
+          벚꽃과 단풍 시즌에는 사진 찍기 좋은 명소로 특히 인기가 많습니다.
+        </div>
+      </div>
+
+      <!-- 2. 호수공원 -->
+      <div class="card">
+        <img class="card-img" src="images/hosu-park.jpg" alt="호수공원 전경 이미지" />
+        <div class="card-title">호수공원</div>
+        <div class="card-desc">
+          넓은 호수와 둘레길, 자전거 도로가 있는 시민 휴식처로,
+          야간에는 분수와 조명이 어우러져 사동 주민들이 산책과 운동을 즐기기 좋은 장소입니다.
+        </div>
+      </div>
+
+      <!-- 3. 안산식물원 -->
+      <div class="card">
+        <img class="card-img" src="images/ansan-botanic.jpg" alt="안산식물원 온실 이미지" />
+        <div class="card-title">안산식물원</div>
+        <div class="card-desc">
+          다양한 식물과 온실, 야외 정원이 조성된 공간으로,
+          계절에 따라 다른 식물을 감상할 수 있어 가족 나들이와 사진 촬영 장소로 사랑받고 있습니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 맛집 추천 -->
+  <section>
+    <h2>🍽️ <span>맛집 추천</span></h2>
+    <div class="card-grid">
+      <!-- 4. 도스마스 본점 -->
+      <div class="card">
+        <img class="card-img" src="images/dosmas.jpg" alt="도스마스 본점 음식 이미지" />
+        <div class="card-title">도스마스 본점</div>
+        <div class="card-desc">
+          타코, 부리또 등 멕시칸 스타일 메뉴를 즐길 수 있는 곳으로,
+          학생들에게 특히 인기 있는 캐주얼 다이닝 매장입니다. 색다른 메뉴를 찾는다면 추천하는 맛집입니다.
+        </div>
+      </div>
+
+      <!-- 5. 남월 -->
+      <div class="card">
+        <img class="card-img" src="images/namwol.jpg" alt="남월 음식 이미지" />
+        <div class="card-title">남월</div>
+        <div class="card-desc">
+          쌀국수와 볶음요리 등 아시아 음식이 중심인 식당으로,
+          깔끔한 국물 맛과 부담 없는 가격 덕분에 점심·저녁 식사 시간에 손님이 많은 편입니다.
+        </div>
+      </div>
+
+      <!-- 6. 대궐막국수 -->
+      <div class="card">
+        <img class="card-img" src="images/daegwol-makguksu.jpg" alt="대궐막국수 막국수 이미지" />
+        <div class="card-title">대궐막국수</div>
+        <div class="card-desc">
+          시원한 막국수와 수육을 함께 즐길 수 있는 곳으로,
+          담백한 메밀면과 깔끔한 육수 덕분에 사동 주민들이 자주 찾는 한 끼 메뉴입니다.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 안산시 사동 안내 페이지 (팀 프로젝트 예시)
+  </footer>
+
+  <!-- 한양대 ERICA 모달 -->
+  <div id="ericaModal" class="modal-overlay modal-hidden">
+    <div class="modal">
+      <button class="modal-close" id="ericaModalClose" aria-label="닫기">×</button>
+      <img class="modal-img" src="images/erica.jpg" alt="한양대학교 ERICA 캠퍼스 이미지" />
+      <div class="modal-title">한양대학교 ERICA 캠퍼스</div>
+      <div class="modal-address">주소: 경기도 안산시 상록구 한양대학로 55</div>
+      <div class="modal-text">
+        사동과 인접한 한양대학교 ERICA 캠퍼스는 넓은 캠퍼스와 호수공원, 잔디광장 덕분에
+        산책과 사진 촬영을 즐기려는 시민들이 자주 찾는 인기 장소입니다.
+        특히 봄과 가을에는 벚꽃과 단풍이 어우러져 사동 주민들의 대표 나들이 코스로 꼽힙니다.
+      </div>
+      <a class="modal-button" href="sadong_erica.html">자세히 보기</a>
+    </div>
+  </div>
+
+  <script>
+    const ericaCard = document.getElementById('card-erica');
+    const ericaModal = document.getElementById('ericaModal');
+    const ericaModalClose = document.getElementById('ericaModalClose');
+
+    // 카드 클릭 → 모달 열기
+    ericaCard.addEventListener('click', () => {
+      ericaModal.classList.remove('modal-hidden');
+    });
+
+    // 닫기 버튼 클릭 → 모달 닫기
+    ericaModalClose.addEventListener('click', () => {
+      ericaModal.classList.add('modal-hidden');
+    });
+
+    // 모달 바깥 클릭 → 닫기
+    ericaModal.addEventListener('click', (e) => {
+      if (e.target === ericaModal) {
+        ericaModal.classList.add('modal-hidden');
+      }
+    });
+
+    // ESC 키로 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !ericaModal.classList.contains('modal-hidden')) {
+        ericaModal.classList.add('modal-hidden');
+      }
+    });
+  </script>
+</body>
+</html>
