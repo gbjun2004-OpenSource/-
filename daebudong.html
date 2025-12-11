@@ -180,7 +180,7 @@
     <div style="position:absolute; left:20px; top:20px; display:flex; align-items:center; gap:10px;">
       <img src="ansan_logo.png" alt="안산시 로고" />
     </div>
-    <a class="home-link" href="index.html"><span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span></a>
+    <a class="home-link" href="daebudong.html"><span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span></a>
     <h1><span style="font-family:'YGIghtJalnanche', sans-serif;">안산시 대부동동</span></h1>
     <p>대부동동 서해 노을이 가장 아름다운 힐링 아일랜드</p>
   </header>
@@ -196,7 +196,7 @@
     <div class="card-grid">
       <a href="place1.html">
         <div class="card" data-link="#">
-          <img src="tour1.jpg" alt="관광지 이미지" />
+          <img src="bangameori1.jpg" alt="관광지 이미지" />
           <div class="card-title">방아머리해변</div>
           <div class="card-desc">넓은 백사장과 서해 풍경을 즐길 수 있는 인기 해변.</div>
         </div>
@@ -204,7 +204,7 @@
 
       <a href="place2.html">
         <div class="card">
-          <img src="tour2.jpg" alt="관광지 이미지" />
+          <img src="daebubada1.jpg" alt="관광지 이미지" />
           <div class="card-title">대부바다향기테마파크</div>
           <div class="card-desc">넓은 갈대습지와 산책로가 아름다운 힐링, 피크닉 명소.</div>
         </div>
@@ -212,7 +212,7 @@
 
       <a href="place3.html">
         <div class="card">
-          <img src="tour3.jpg" alt="관광지 이미지" />
+          <img src="sihwanarae1.jpg" alt="관광지 이미지" />
           <div class="card-title">시화나래조력공원</div>
           <div class="card-desc">조력발전소 위에 조성된 공원으로 서해의 풍력 발전기와 바다를 조망할 수 있는 곳.</div>
         </div>
@@ -255,7 +255,7 @@
       <button class="popup-arrow left" id="popupPrev">&#10094;</button>
       <button class="popup-arrow right" id="popupNext">&#10095;</button>
 
-      <img id="popupImg" src="" alt="popup image" />
+      <img id="popupImg"/>
       <div class="popup-title" id="popupTitle"></div>
       <div class="popup-desc" id="popupDesc"></div>
       <div class="popup-info" id="popupInfo"
@@ -286,7 +286,7 @@
     // 관광지
     { address:"경기 안산시 단원구 대부북동", time:"24시간 개방", info:"" },
     { address:"경기 안산시 단원구 대부황금로 1546", time:"24시간 개방", info:"" },
-    { address:"경기 안산시 단원구 대부동동", time:"24시간 개방", info:"☎ 032-880-7000" },
+    { address:"경기 안산시 단원구 대부동동", time:"24시간 개방", info:"032-880-7000" },
 
     // 맛집 (나중에 채울 곳)
     { address:"", time:"", info:"" },  // 동환네 조개구이
@@ -295,7 +295,6 @@
   ];
 
   return {
-    img: card.querySelector('img').src,
     title: card.querySelector('.card-title').innerText,
     desc: card.querySelector('.card-desc').innerText,
     link: linkEl ? linkEl.href : card.dataset.link || '#',

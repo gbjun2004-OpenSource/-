@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>동환네 조개구이 소개</title>
+  <title>시화나래조력공원 소개</title>
   <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -19,29 +19,42 @@
     header {
       background: linear-gradient(135deg, #6b7aa8, #9fb0e0);
       color:white;
-      padding:30px 20px;
+      padding:20px 20px;
       text-align:center;
+      position:relative; /* 절대 위치 요소 기준 */
     }
-    header h1 {
-      margin:0;
-      font-size:2rem;
-      font-weight:800;
+    header img {
+      height:40px;
     }
-    header p {
-      margin:8px 0 0 0;
-      font-size:1rem;
-      color: rgba(255,255,255,0.9);
+    .home-link {
+      position:absolute;
+      right:20px;
+      top:28px;
+      background:none;
+      color:#ffffff;
+      padding:0;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.95rem;
+    }
+    .header-logo {
+      position:absolute;
+      left:20px;
+      top:20px;
     }
     .content {
-      max-width:800px;
-      margin:36px auto;
-      padding:0 20px;
-    }
+    max-width: 66.66%; /* 화면의 2/3 너비 */
+    margin: 36px auto; /* 자동 좌우 여백으로 가운데 정렬 */
+    padding: 20px 20px;
+    background:white;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(30,40,80,0.06);
+    } 
     .content img {
       width:100%;
       border-radius:14px;
       margin-bottom:20px;
-      box-shadow:0 8px 30px rgba(30,40,80,0.06);
     }
     h2 {
       font-size:1.5rem;
@@ -55,6 +68,17 @@
       color:#6b7280;
       margin-bottom:16px;
     }
+    ul {
+      margin-left:20px;
+      margin-bottom:16px;
+    }
+    iframe {
+      width:100%;
+      height:300px;
+      border:0;
+      border-radius:14px;
+      margin-bottom:16px;
+    }
     a.back-link {
       display:inline-block;
       margin-top:20px;
@@ -62,30 +86,60 @@
       color:#1e66ff;
       font-weight:600;
     }
+    strong {
+      color:#243044;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>동환네 조개구이</h1>
-    <p>안산시 대부동동의 인기 맛집</p>
-  </header>
+    <!-- 로고 -->
+    <div class="header-logo">
+      <img src="ansan_logo.png" alt="안산시 로고" />
+    </div>
+
+    <!-- 홈 버튼 -->
+    <a class="home-link" href="daebudong.html">
+      <span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span>
+    </a>
+
+    <!-- 헤더 텍스트 -->
+    <h1 style="font-weight:1000; margin-bottom:6px;">시화나래조력공원</h1>
+    <p style="color:white; margin-top:0; font-size:1rem;">안산시 대부동동의 자연 힐링 명소</p>
+</header>
 
   <div class="content">
-    <img src="donghwan_clam.jpg" alt="동환네 조개구이 이미지" />
+    <img src="sihwanarae1.jpg" alt="시화나래조력공원 이미지" style="display:block; margin:0 auto; width:600px; height: 400px;;"/>
 
-    <h2>소개</h2>
-    <p>동환네 조개구이는 신선한 조개구이와 바다 분위기를 함께 즐길 수 있는 대부동동의 명물 맛집입니다. 가족, 친구, 연인 누구와 함께 와도 즐거운 시간을 보낼 수 있는 곳입니다.</p>
+    <h2>📍 시화나래조력공원, 어떤 곳일까?</h2>
+    <p>시화나래조력공원은 시화방조제 한가운데 위치하며, 바다의 힘으로 전기를 만드는 조력발전소 바로 위에 조성된 해상 공원입니다. 시원하게 트인 서해 바다와 시화호를 동시에 조망할 수 있는 환상적인 위치를 자랑해요.</p>
+    <p><strong>세계 최대 조력발전소:</strong> 거대한 발전 설비를 눈으로 직접 볼 수 있는 흥미로운 장소입니다.</p>
+    <p><strong>시화나래 휴게소:</strong> 공원과 휴게소가 함께 있어 쉬어가기 좋고, 다양한 편의시설을 갖추고 있습니다.</p>
+    <p><strong>뻥 뚫린 뷰:</strong> 동쪽으로는 시화호, 서쪽으로는 서해 바다가 펼쳐져 있어 가슴이 시원해지는 개방감을 느낄 수 있습니다.</p>
 
-    <h2>추천 메뉴</h2>
-    <p>- 조개구이 세트: 신선한 조개를 숯불에 구워 먹는 인기 메뉴</p>
-    <p>- 해물탕: 조개, 새우, 꽃게가 가득한 얼큰한 해물탕</p>
+    <h2>✨ 시화나래조력공원에서 꼭 해야 할 3가지</h2>
+    <ul>
+      <li>🔭 <strong>서해를 한눈에! 시화나래 달 전망대:</strong> 시화나래조력공원의 상징이자 하이라이트는 바로 <strong>높이 75m</strong>의 <strong>달 전망대</strong>입니다! 엘리베이터를 타고 전망대에 오르면, 유리 바닥으로 된 <strong>스카이워크</strong> 구간이 있어 짜릿한 경험을 할 수 있어요. 이곳에서 바라보는 시화호와 서해의 전경, 그리고 조력발전소의 모습은 그야말로 압권입니다.</li>
+      <li>🌊 <strong>잔잔한 바닷바람을 느끼는 산책로:</strong> 공원 주변으로 잘 정비된 해상 산책로가 이어져 있습니다. 특히, 시화호 방면으로 난 길을 걸으며 잔잔한 호수 같은 바다를 바라보면 스트레스가 확 풀리는 기분이에요. <strong>피크닉</strong>을 즐기기 좋은 잔디밭과 벤치도 곳곳에 마련되어 있습니다.</li>
+      <li>💡 <strong>조력발전의 비밀! 조력문화관:</strong> 시화나래조력공원에 왔다면 꼭 들러야 할 곳! 조력문화관에서는 조수 간만의 차를 이용해 전기를 만드는 원리와 시화호의 역사를 다양한 체험 전시를 통해 쉽고 재미있게 배울 수 있습니다. 아이들과 함께 방문한다면 교육적인 가치까지 더할 수 있는 최고의 선택이 될 거예요.</li>
+    </ul>
 
-    <h2>위치 및 정보</h2>
-    <p>주소: 경기도 안산시 대부동동 ○○번길 12</p>
-    <p>영업시간: 10:00 ~ 22:00</p>
-    <p>전화번호: 031-XXX-XXXX</p>
+    <h2>🗺️ 위치 및 찾아오시는 길</h2>
+    <p><strong>주소:</strong> 경기 안산시 단원구 대부동동 2098</p>
 
-    <a class="back-link" href="index.html">← 맛집 목록으로 돌아가기</a>
+    <!-- 구글 지도 임베드 -->
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.2977799307378!2d126.60442997567006!3d37.31177347210574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b9fd783fbeaff%3A0xbf5fecd4193ee12!2z7Iuc7ZmU64KY656Y7KGw66Cl6rO17JuQ!5e0!3m2!1sko!2skr!4v1765442536373!5m2!1sko!2skr" 
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <p><strong>주차:</strong> 공영 주차장 완비, 주차료 무료. </p>
+    <p><strong>대중교통:</strong> 안산역에서 123번, 오이도역에서 123번 또는 790번 시내버스를 탑승 후 '시화나래휴게소' 정류장에서 하차.</p>
+
+    <p>뻥 뚫린 서해 바다와 신비로운 발전의 원리를 동시에 체험할 수 있는 <strong>시화나래조력공원!</strong> 이번 주말, 특별한 힐링과 교육을 동시에 잡는 여행을 떠나보시는 건 어떨까요?</p>
+
+    <a class="back-link" href="daebudong.html">← 안산시 대부동동으로 돌아가기</a>
   </div>
 </body>
 </html>
