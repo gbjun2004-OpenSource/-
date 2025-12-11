@@ -19,29 +19,42 @@
     header {
       background: linear-gradient(135deg, #6b7aa8, #9fb0e0);
       color:white;
-      padding:30px 20px;
+      padding:20px 20px;
       text-align:center;
+      position:relative; 
     }
-    header h1 {
-      margin:0;
-      font-size:2rem;
-      font-weight:800;
+    header img {
+      height:40px;
     }
-    header p {
-      margin:8px 0 0 0;
-      font-size:1rem;
-      color: rgba(255,255,255,0.9);
+    .home-link {
+      position:absolute;
+      right:20px;
+      top:28px;
+      background:none;
+      color:#ffffff;
+      padding:0;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.95rem;
+    }
+    .header-logo {
+      position:absolute;
+      left:20px;
+      top:20px;
     }
     .content {
-      max-width:800px;
-      margin:36px auto;
-      padding:0 20px;
-    }
+    max-width: 66.66%;
+    margin: 36px auto; 
+    padding: 20px 20px;
+    background:white;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(30,40,80,0.06);
+    } 
     .content img {
       width:100%;
       border-radius:14px;
       margin-bottom:20px;
-      box-shadow:0 8px 30px rgba(30,40,80,0.06);
     }
     h2 {
       font-size:1.5rem;
@@ -55,6 +68,17 @@
       color:#6b7280;
       margin-bottom:16px;
     }
+    ul {
+      margin-left:20px;
+      margin-bottom:16px;
+    }
+    iframe {
+      width:100%;
+      height:300px;
+      border:0;
+      border-radius:14px;
+      margin-bottom:16px;
+    }
     a.back-link {
       display:inline-block;
       margin-top:20px;
@@ -62,30 +86,78 @@
       color:#1e66ff;
       font-weight:600;
     }
+    strong {
+      color:#243044;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>동환네 조개구이</h1>
-    <p>안산시 대부동동의 인기 맛집</p>
-  </header>
+    
+    <div class="header-logo">
+      <img src="ansan_logo.png" alt="안산시 로고" />
+    </div>
 
+    
+    <a class="home-link" href="daebudong.html">
+      <span style="font-family:'YGIghtJalnanche',sans-serif;">홈으로</span>
+    </a>
+
+    
+    <h1 style="font-weight:1000; margin-bottom:6px;">동환네 조개구이</h1>
+    <p style="color:white; margin-top:0; font-size:1rem;">안산시 대부동동의 인기 맛집</p>
+</header>
   <div class="content">
-    <img src="donghwan_clam.jpg" alt="동환네 조개구이 이미지" />
+    <img src="donghwannae.jpg" alt="동환네 조개구이" style="display:block; margin:0 auto; width:600px; height:400px;;"/>
 
-    <h2>소개</h2>
-    <p>동환네 조개구이는 신선한 조개구이와 바다 분위기를 함께 즐길 수 있는 대부동동의 명물 맛집입니다. 가족, 친구, 연인 누구와 함께 와도 즐거운 시간을 보낼 수 있는 곳입니다.</p>
+    <h2>✨ 동환네 조개구이</h2>
+    <p>동환네 조개구이는 <Strong>파도 소리가 바로 닿을 듯한 바닷가</Strong>에 위치하여, <strong>정겨운 포장마차식 감성</strong>과 활기찬 분위기가 물씬 풍기는 명소입니다. 붉게 타오르는 숯불 위에서 싱싱한 조개를 구워 먹으며, <strong>서해 노을과 노포 스타일의 정취</strong>를 동시에 만끽할 수 있는 최고의 장소입니다.</p>
+    <p><strong>주소:</strong> 경기 안산시 단원구 대부동동 산314-18</p>
+    <p><strong>운영시간:</strong> 금~수: 11:00 ~ 20:00. <strong>매주 목요일 휴무</strong>(목요일이 임시공휴일 및 법정공휴일일 경우 영업).</p>
+    <p>📞 0507-1418-1038</p>
 
-    <h2>추천 메뉴</h2>
-    <p>- 조개구이 세트: 신선한 조개를 숯불에 구워 먹는 인기 메뉴</p>
-    <p>- 해물탕: 조개, 새우, 꽃게가 가득한 얼큰한 해물탕</p>
+    <h2> 🍽️ 메뉴 추천</h2>
+    <ul>
+      <li>☝️ <strong>조개구이(찜) 스페셜: 조개구이(찜)+새우구이+키양념+산낙지+칼국수</strong> <br>💵 특대  150,000 / 4인(대)  130,000 / 3인(중)  110,000 / 2인(소)  90,000</li>
+      <li>✌️ <strong>조개구이(찜)</strong> <br>💵 대  80,000 / 중  70,000 / 소  60,000</li>
+      <li>👌 <strong>산낙지</strong> <br>💵 30,000</li>
+    </ul>
 
-    <h2>위치 및 정보</h2>
-    <p>주소: 경기도 안산시 대부동동 ○○번길 12</p>
-    <p>영업시간: 10:00 ~ 22:00</p>
-    <p>전화번호: 031-XXX-XXXX</p>
+    <p style="margin-top:20px; text-align:center;">
+      <a href="https://m.place.naver.com/restaurant/1185194036/review/visitor?entry=plt"
+        target="_blank"
+        style="
+          display:inline-block;
+          padding:12px 18px;
+          background:#3B82F6; 
+          color:white;
+          font-weight:600;
+          border-radius:8px;
+          text-decoration:none;
+          box-shadow:0 2px 6px rgba(0,0,0,0.15);
+          transition:0.2s;
+        "
+        onmouseover="this.style.background='#475569'"
+        onmouseout="this.style.background='#3B82F6'">
+        ⭐ 네이버 리뷰 보러가기
+      </a>
+    </p>
 
-    <a class="back-link" href="index.html">← 맛집 목록으로 돌아가기</a>
+    <h2>🗺️ 위치 및 찾아오시는 길</h2>
+
+    
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.7186675204243!2d126.61736027566606!3d37.23065297212749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b0b2c31108be9%3A0x939ab6a58c2a2670!2z64-Z7ZmY64SkIOyhsOqwnOq1rOydtA!5e0!3m2!1sko!2skr!4v1765457115639!5m2!1sko!2skr"
+      allowfullscreen="" 
+      loading="lazy">
+    </iframe>
+
+    <p><strong>주차:</strong> 식당 앞 주차 가능. </p>
+    <p><strong>대중교통:</strong> 안산역 또는 오이도역에서 123번 또는 790번 시내버스 탑승 후 '나루터' 정류장에서 하차.</p>
+
+    <p>동환네 조개구이는 단순한 식사를 넘어 바다 뷰와 노포 감성을 함께 즐기는 특별한 경험을 선사합니다. 싱싱한 조개와 얼큰한 칼국수로 일상의 스트레스를 시원하게 날려보세요! 이번 주말, 서울 근교의 낭만적인 대부도 동환네 조개구이에서 활력 가득한 서해 먹방 여행을 완성해 보는 건 어떨까요?</p>
+
+    <a class="back-link" href="daebudong.html">← 안산시 대부동동으로 돌아가기</a>
   </div>
 </body>
 </html>
