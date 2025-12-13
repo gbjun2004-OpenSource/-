@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>도스마스 본점 - 사동 주변 맛집</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSans.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#f6f8fc;
+      --navy-1:#6b7aa8;
+      --navy-2:#9fb0e0;
+      --accent:#1e66ff;
+      --text:#243044;
+      --muted:#6b7280;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:'Noto Sans KR',system-ui,-apple-system,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      padding-bottom:120px;
+    }
+    header{
+      background:linear-gradient(135deg,var(--navy-1),var(--navy-2));
+      color:#fff;
+      padding:40px 20px;
+      text-align:center;
+      position:relative;
+    }
+    .back-link{
+      position:absolute;
+      left:20px;
+      top:22px;
+      color:#fff;
+      text-decoration:none;
+      font-size:0.9rem;
+    }
+    h1{
+      margin:0;
+      font-size:2rem;
+      font-weight:800;
+      font-family:'GmarketSans','Noto Sans KR',sans-serif;
+    }
+    header p{
+      margin:8px 0 0 0;
+      color:rgba(255,255,255,0.9);
+    }
+    main{
+      max-width:900px;
+      margin:30px auto 0;
+      padding:0 20px;
+    }
+    h2{
+      font-size:1.5rem;
+      margin:24px 0 12px;
+      border-left:6px solid var(--accent);
+      padding-left:10px;
+      font-weight:700;
+    }
+    p{
+      font-size:0.98rem;
+      line-height:1.6;
+      color:var(--text);
+      margin:0 0 12px;
+    }
+    .info-box{
+      background:var(--card);
+      border-radius:16px;
+      padding:18px 20px;
+      margin-bottom:18px;
+      box-shadow:0 6px 18px rgba(30,40,80,0.05);
+      border:1px solid rgba(30,40,80,0.04);
+    }
+    .tag-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:10px;
+      font-size:0.85rem;
+    }
+    .tag{
+      padding:4px 10px;
+      border-radius:999px;
+      background:#e3ebff;
+      color:#1e3a8a;
+    }
+    footer{
+      max-width:900px;
+      margin:32px auto 0;
+      padding:0 20px;
+      font-size:0.85rem;
+      color:var(--muted);
+      text-align:right;
+    }
+    @media(max-width:600px){
+      h1{font-size:1.7rem;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="sadong.html" class="back-link">← 사동 페이지로</a>
+    <h1>도스마스 본점</h1>
+    <p>멕시칸 스타일 타코와 부리또를 즐길 수 있는 맛집</p>
+  </header>
+
+  <main>
+    <section class="info-box">
+      <h2>가게 소개</h2>
+      <p>
+        도스마스 본점은 타코, 부리또 등 멕시칸 음식을 판매하는 캐주얼 다이닝으로,
+        한양대 ERICA 인근에서 학생과 직장인 모두에게 인기 있는 맛집입니다.
+      </p>
+      <p>
+        푸드트럭 감성이 느껴지는 메뉴 구성과 부담 없는 가격대 덕분에
+        색다른 음식을 먹고 싶을 때 찾기 좋은 곳입니다.
+      </p>
+      <div class="tag-list">
+        <span class="tag">멕시칸 음식</span>
+        <span class="tag">타코</span>
+        <span class="tag">부리또</span>
+      </div>
+    </section>
+
+    <section class="info-box">
+      <h2>추천 메뉴</h2>
+      <p>
+        치즈가 듬뿍 올라간 부리또와 소스가 잘 어울리는 타코 메뉴가 특히 인기 있으며,
+        매운맛 정도를 선택할 수 있어 취향에 따라 조절이 가능한 것이 장점입니다.
+      </p>
+      <p>
+        여러 메뉴를 함께 시켜 나눠 먹기에도 좋아, 친구들과 함께 방문하기 좋은 구성입니다.
+      </p>
+    </section>
+
+    <section class="info-box">
+      <h2>사동에서 방문 팁</h2>
+      <p>
+        사동에서 도스마스 본점까지는 한양대 ERICA 인근 상권을 통해 쉽게 접근할 수 있으며,
+        점심·저녁 시간대에는 대기 손님이 있을 수 있으니 여유 있게 방문하는 것이 좋습니다.
+      </p>
+      <p>
+        포장과 배달을 함께 운영하는 경우도 있어, 집이나 기숙사에서 편하게 즐기는 방법도 있습니다.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 안산시 사동 · 도스마스 본점 안내 (예시 페이지)
+  </footer>
+</body>
+</html>
